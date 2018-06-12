@@ -1,3 +1,4 @@
+
 # Practical-Exercise-Airflow and Impala
 
 The goal of the exercise is to generate two tables to report the user statistics of a website including the number of inserts, updates, deletes made by the user, whether the user has been active for the past two days, etc and also to record the number of total users in the system and the number of users added from time to time.
@@ -18,9 +19,9 @@ The goal of the exercise is to generate two tables to report the user statistics
 
 ### Instructions to run:
 
-##./start.sh - To initialize the web server, scheduler and the worker.
+#### ./start.sh - To initialize the web server, scheduler and the worker.
 
-##Initialization.py
+#### Initialization.py
 
 `airflow unpause initialization`
 
@@ -28,12 +29,20 @@ The goal of the exercise is to generate two tables to report the user statistics
 
 	- Creates the DB and initializes the sqoop metastore.
 
-##Reports.py
+#### Reports.py
 
 `airflow unpause reports`
 
 `airflow trigger_dag reports`
 
-	- A DAG is initialized with an array of tasks to construct two tables user_report and user_total
+- A DAG is initialized with an array of tasks to construct two tables user_report and user_total
+	
+- The user_report table contains the user id, number of updates, inserts and the deletes that the user has made, the last activity type of the user (Whether the user has done an insert, update or a delete), whether he has been active during the last two days and the number of uploads he has made.
+
+- The user_total table is created to determine the number of users using the website at a certain point of time. Every time the DAG is run, a new row gets appended at the end of the user_total which records the timestamp at which the entry is made, total number of users, the number of users added.
+
+
+
+
 
 
