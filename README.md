@@ -18,6 +18,7 @@ The goal of the exercise is to generate two tables to report the user statistics
     - **timestamp** - indicates the timestamp at which the particular activity was performed by the user.
 
 ### Instructions to run:
+Initialization.py and Reports.py should be placed inside the /airflow/dags/ folder. 
 
 #### ./start.sh - To initialize the web server, scheduler and the worker.
 
