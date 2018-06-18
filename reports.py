@@ -58,11 +58,6 @@ insert_usertotal = BashOperator(task_id='insert_usertotal', bash_command=""" imp
 
 
 
-
-
-
-
-
 load_data.set_downstream(addition_data)
 load_data.set_downstream(import_user)
 create_csv.set_downstream(move_csv_to_hdfs)
